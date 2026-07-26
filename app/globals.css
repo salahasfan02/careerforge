@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --page: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --surface-hover: #e8ebef;
+  --border: rgba(15, 23, 42, 0.1);
+  --ink: #0f172a;
+  --ink-2: #43516b;
+  --ink-muted: #7c8aa5;
+
+  --accent: #0d6e6e;
+  --accent-strong: #0a5757;
+  --accent-soft: rgba(13, 110, 110, 0.1);
+
+  --strong: #157a3d;
+  --strong-bg: rgba(21, 122, 61, 0.1);
+  --partial: #9a6b0a;
+  --partial-bg: rgba(154, 107, 10, 0.12);
+  --underdeveloped: #b0530f;
+  --underdeveloped-bg: rgba(176, 83, 15, 0.12);
+  --missing: #6b7280;
+  --missing-bg: rgba(107, 114, 128, 0.12);
+  --unknown: #64748b;
+  --unknown-bg: rgba(100, 116, 139, 0.1);
+  --danger: #b3261e;
+  --danger-bg: rgba(179, 38, 30, 0.1);
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0a0f1a;
+    --surface: #111927;
+    --surface-2: #17202f;
+    --surface-hover: #1d283a;
+    --border: rgba(226, 232, 240, 0.1);
+    --ink: #e7ecf5;
+    --ink-2: #b3bfd6;
+    --ink-muted: #7c8aa5;
+
+    --accent: #35b3ad;
+    --accent-strong: #5ecac4;
+    --accent-soft: rgba(53, 179, 173, 0.16);
+
+    --strong: #3fb473;
+    --strong-bg: rgba(63, 180, 115, 0.14);
+    --partial: #d9a441;
+    --partial-bg: rgba(217, 164, 65, 0.14);
+    --underdeveloped: #e08a4c;
+    --underdeveloped-bg: rgba(224, 138, 76, 0.14);
+    --missing: #94a3b8;
+    --missing-bg: rgba(148, 163, 184, 0.14);
+    --unknown: #94a3b8;
+    --unknown-bg: rgba(148, 163, 184, 0.1);
+    --danger: #f2564a;
+    --danger-bg: rgba(242, 86, 74, 0.14);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.32);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0a0f1a;
+  --surface: #111927;
+  --surface-2: #17202f;
+  --surface-hover: #1d283a;
+  --border: rgba(226, 232, 240, 0.1);
+  --ink: #e7ecf5;
+  --ink-2: #b3bfd6;
+  --ink-muted: #7c8aa5;
+
+  --accent: #35b3ad;
+  --accent-strong: #5ecac4;
+  --accent-soft: rgba(53, 179, 173, 0.16);
+
+  --strong: #3fb473;
+  --strong-bg: rgba(63, 180, 115, 0.14);
+  --partial: #d9a441;
+  --partial-bg: rgba(217, 164, 65, 0.14);
+  --underdeveloped: #e08a4c;
+  --underdeveloped-bg: rgba(224, 138, 76, 0.14);
+  --missing: #94a3b8;
+  --missing-bg: rgba(148, 163, 184, 0.14);
+  --unknown: #94a3b8;
+  --unknown-bg: rgba(148, 163, 184, 0.1);
+  --danger: #f2564a;
+  --danger-bg: rgba(242, 86, 74, 0.14);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.32);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: thin;
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-sans), -apple-system, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif-display {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+a.card:hover,
+button.card:hover,
+.card-interactive:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+.hairline {
+  border-color: var(--border);
+}
+
+button,
+a {
+  transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease, opacity 140ms ease, box-shadow 140ms ease, transform 140ms ease;
+}
+
+button:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+@keyframes cf-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cf-fade-in {
+  animation: cf-fade-in 220ms ease both;
+}
