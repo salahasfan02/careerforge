@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createGeneratedDocument, listGeneratedDocuments } from "@/lib/server/collections/generatedDocuments";
-import { getProfile } from "@/lib/server/collections/profile";
+import { getProfile, isProfileUsable } from "@/lib/server/collections/profile";
 import { getJob } from "@/lib/server/collections/jobs";
 import { getLatestMatch } from "@/lib/server/collections/matches";
 import { generateDocument } from "@/lib/pipeline/generateDocument";
@@ -28,6 +28,16 @@ export async function POST(req: NextRequest) {
   const jobId = body.jobId ? Number(body.jobId) : undefined;
 
   const profile = getProfile();
+  if (!isProfileUsable(profile)) {
+    return NextResponse.json(
+      {
+        error:
+          "Your Career Profile doesn't have enough information yet (no employment, skills, or projects) — add some in My Career Profile first, otherwise there's nothing real to write from.",
+      },
+      { status: 400 }
+    );
+  }
+
   const job = jobId ? getJob(jobId) ?? undefined : undefined;
   const matchAnalysis = job ? getLatestMatch(job.id) : undefined;
 
