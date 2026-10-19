@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Lora } from "next/font/google";
+import { Manrope, Lora } from "next/font/google";
 import { Sidebar } from "@/components/Sidebar";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const sans = Manrope({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 const lora = Lora({ subsets: ["latin"], variable: "--font-serif", display: "swap" });
 
 export const metadata: Metadata = {
@@ -25,14 +25,14 @@ const THEME_INIT_SCRIPT = `
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${lora.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${sans.variable} ${lora.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       <body>
         <div className="flex h-screen">
           <Sidebar />
-          <main className="flex-1 overflow-y-auto" style={{ background: "var(--page)" }}>
+          <main className="app-main flex-1 overflow-y-auto">
             <div className="mx-auto max-w-5xl px-8 py-8">{children}</div>
           </main>
         </div>

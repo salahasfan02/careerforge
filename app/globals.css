@@ -120,6 +120,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.app-main {
+  background:
+    radial-gradient(900px 500px at 85% -10%, var(--accent-soft), transparent 60%),
+    var(--page);
+}
+
 .font-serif-display {
   font-family: var(--font-serif), Georgia, serif;
 }
@@ -127,9 +133,9 @@ body {
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 16px;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+  transition: box-shadow 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 a.card:hover,
@@ -137,6 +143,7 @@ button.card:hover,
 .card-interactive:hover {
   box-shadow: var(--shadow-md);
   border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .hairline {
