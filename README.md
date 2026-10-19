@@ -116,8 +116,8 @@ ollama pull nomic-embed-text   # embeddings — semantic matching
 ollama pull granite3.2-vision  # vision — scanned CV OCR (optional)
 
 # 2. Clone and install
-git clone https://github.com/Salahasfan02/careerforge.git
-cd careerforge
+git clone https://github.com/salahasfan02/cv-tailor.git
+cd cv-tailor
 npm install
 
 # 3. Run it

@@ -5,9 +5,9 @@ const FILE = "settings.json";
 
 const DEFAULT_SETTINGS: Settings = {
   ollamaUrl: process.env.OLLAMA_URL || "http://localhost:11434",
-  reasoningModel: process.env.CAREERFORGE_REASONING_MODEL || "qwen2.5:14b",
-  embeddingModel: process.env.CAREERFORGE_EMBEDDING_MODEL || "nomic-embed-text",
-  visionModel: process.env.CAREERFORGE_VISION_MODEL || "granite3.2-vision",
+  reasoningModel: process.env.CV_TAILOR_REASONING_MODEL || "qwen2.5:14b",
+  embeddingModel: process.env.CV_TAILOR_EMBEDDING_MODEL || "nomic-embed-text",
+  visionModel: process.env.CV_TAILOR_VISION_MODEL || "granite3.2-vision",
 };
 
 export function getSettings(): Settings {

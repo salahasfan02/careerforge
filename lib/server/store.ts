@@ -8,10 +8,10 @@ const DATA_DIR = path.join(process.cwd(), "data");
 // reset it between module reloads (mirrors the singleton-on-globalThis pattern
 // used for stateful resources elsewhere in this monorepo).
 const globalForStore = globalThis as unknown as {
-  __careerforgeWriteQueues?: Map<string, Promise<unknown>>;
+  __cvTailorWriteQueues?: Map<string, Promise<unknown>>;
 };
-const writeQueues = globalForStore.__careerforgeWriteQueues ?? new Map<string, Promise<unknown>>();
-globalForStore.__careerforgeWriteQueues = writeQueues;
+const writeQueues = globalForStore.__cvTailorWriteQueues ?? new Map<string, Promise<unknown>>();
+globalForStore.__cvTailorWriteQueues = writeQueues;
 
 function filePath(name: string): string {
   return path.join(DATA_DIR, name);
