@@ -57,10 +57,10 @@ export function Sidebar() {
             className="flex h-9 w-9 items-center justify-center rounded-xl text-sm font-bold text-white"
             style={{ background: "linear-gradient(135deg, var(--accent), var(--accent-strong))" }}
           >
-            CF
+            CT
           </div>
           <span className="font-serif-display text-lg font-semibold" style={{ color: "var(--ink)" }}>
-            CareerForge
+            CV Tailor
           </span>
         </div>
 

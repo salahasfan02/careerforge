@@ -7,7 +7,7 @@ const sans = Manrope({ subsets: ["latin"], variable: "--font-sans", display: "sw
 const lora = Lora({ subsets: ["latin"], variable: "--font-serif", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "CareerForge — Private AI Career Assistant",
+  title: "CV Tailor — Private AI Career Assistant",
   description: "Local-first AI CV tailoring, job matching, and career optimisation.",
 };
 

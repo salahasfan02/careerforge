@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🧭 CareerForge
+# 🧭 CV Tailor
 
 ### A private, local-first AI career intelligence platform.
 
 **CV analysis. Job matching. Tailored generation. Interview prep. 100% on your machine — no cloud, no API keys, no subscriptions.**
 
-CareerForge understands your real experience, compares it against what a job actually requires, shows you exactly where the gaps are, and helps you close them — truthfully. Every AI call runs locally through [Ollama](https://ollama.com). Your CV, career history, and job search never leave your device.
+CV Tailor understands your real experience, compares it against what a job actually requires, shows you exactly where the gaps are, and helps you close them — truthfully. Every AI call runs locally through [Ollama](https://ollama.com). Your CV, career history, and job search never leave your device.
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=next.js&logoColor=white)](#tech-stack)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript&logoColor=white)](#tech-stack)
@@ -20,9 +20,9 @@ CareerForge understands your real experience, compares it against what a job act
 
 ---
 
-## 🧠 Why CareerForge?
+## 🧠 Why CV Tailor?
 
-Most "AI CV tools" are a chatbot with a prompt template — they'll happily invent a metric you never measured or a skill you never used. CareerForge is built the opposite way: **the model is never the source of truth, your verified Career Profile is.**
+Most "AI CV tools" are a chatbot with a prompt template — they'll happily invent a metric you never measured or a skill you never used. CV Tailor is built the opposite way: **the model is never the source of truth, your verified Career Profile is.**
 
 - **🔒 Totally private** — every extraction, match, and generation call runs against a local model via Ollama. No accounts, no telemetry, no cloud fallback.
 - **🧾 Evidence, not vibes** — every match, every generated bullet, every claim traces back to a specific entry in your Career Profile. Nothing is ever invented.
@@ -110,7 +110,7 @@ Most "AI CV tools" are a chatbot with a prompt template — they'll happily inve
 ## 🚀 Quick Start
 
 ```bash
-# 1. Install Ollama and pull the models CareerForge uses by default
+# 1. Install Ollama and pull the models CV Tailor uses by default
 ollama pull qwen2.5:14b        # reasoning — extraction, matching, generation
 ollama pull nomic-embed-text   # embeddings — semantic matching
 ollama pull granite3.2-vision  # vision — scanned CV OCR (optional)
@@ -124,7 +124,7 @@ npm install
 npm run dev
 ```
 
-Open **http://localhost:3400**. All three models are swappable any time from **Settings** — CareerForge queries Ollama for whatever you actually have installed.
+Open **http://localhost:3400**. All three models are swappable any time from **Settings** — CV Tailor queries Ollama for whatever you actually have installed.
 
 ---
 
@@ -142,7 +142,7 @@ Open **http://localhost:3400**. All three models are swappable any time from **S
 
 ## 🔐 Privacy & Truthfulness
 
-CareerForge's whole design is built around two non-negotiable rules:
+CV Tailor's whole design is built around two non-negotiable rules:
 
 - **Nothing leaves your device.** No cloud AI provider is wired in — every call goes to your local Ollama endpoint. Your data is plain JSON files on disk (`data/`), inspectable, backupable, deletable, entirely under your control.
 - **The model never invents.** Every generated CV bullet, cover letter claim, and match citation is traceable to a real entry in your Career Profile. When something can't be verified, the app says so explicitly — a missing requirement is reported as "not found in your profile," never as "you don't have this."
@@ -169,11 +169,11 @@ Modular by design — the AI provider, embedding model, document parser, and sto
 
 ## 🤝 Contributing
 
-PRs, ideas, and bug reports are welcome — CareerForge is designed to be extended. The pipeline is modular: a new document parser, a new AI provider, or a new CV template each drop in without touching the rest of the app.
+PRs, ideas, and bug reports are welcome — CV Tailor is designed to be extended. The pipeline is modular: a new document parser, a new AI provider, or a new CV template each drop in without touching the rest of the app.
 
 ## ⭐ Star it
 
-If CareerForge is useful, **drop a star** — it helps other people find it.
+If CV Tailor is useful, **drop a star** — it helps other people find it.
 
 ## 📄 License
 

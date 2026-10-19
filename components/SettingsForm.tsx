@@ -42,7 +42,7 @@ export function SettingsForm({ initialSettings }: { initialSettings: Settings })
           Local AI Provider
         </h2>
         <p className="mt-1 text-sm" style={{ color: "var(--ink-muted)" }}>
-          CareerForge only talks to Ollama running on this device. Your CV, career profile, and job
+          CV Tailor only talks to Ollama running on this device. Your CV, career profile, and job
           data never leave this machine.
         </p>
 
